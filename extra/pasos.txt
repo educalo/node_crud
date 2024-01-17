@@ -1,0 +1,45 @@
+Terminal:
+1.- npm init -y		//con y damos a yes a todas las opciones que nos preguntaria
+2.- Nos crea un fichero package.json	//
+3.- Instalamos los modulos que necesitamos
+4.- npm install express ejs mysql nodemon	//framework-> express ejs->motor de plantillas mysql modmon para recargar el servidor de forma constante y veamos los resultados.
+5.- Creo un fichero en la raiz un fichero que se llame app.js 	//fichero principal
+6.- Echando un vistazo al fichero package.json vemos que se han añadido nuevas dependencias
+7.- Echo un vistazo al contenido que he tenido que añadir en app.js	//esta comentado
+8.- abrimos nueva terminal y lanzamos nuestra aplicacion node app	//podemos cortar el servidor con Control+C, una mejora seria poner nodemon app para que continuamente nos muestre los cambios realizados sin necesidad de parar y arrancar el servidor.
+9.- para que funcione he hecho alguna que otra modificacion en el fichero package.json   mirar?????
+10.- nos debe aparecer que no hay ninguna ruta definida para la raiz   cannot GET/
+11.- añado la linea app.get para que nos muestre el texto "hola" y en el navegador abierto pulso F5 
+12.- comento app.get porque es mejor idea hacer esto con un enrutador, se menciona mas adelante
+13.- Añadimos nuestro motor de plantilla ejs	//motor de plantilla te premite enviar codigo html y js desde el servidor
+14.- creamos una carpeta en el directorio raiz que se llama views y dentro tres fichero index.ejs, create.ejs y edit.ejs, no hace falta poner el fichero delete.ejs porque se borra directamente
+15.- Creo una carpeta database y dentro un fichero db.js donde indicamos los parametros de conexion a la bd
+16.- Creo otra carpeta que se va a llamar controllers y dentro un archivo crud.js
+17.- Creamos en el directorio raiz el enrutrador router.js
+18.- Añadimos en app.js el app.use para dar de alta el enrutador
+19.- Si ahora pongo localhost/contacto nos muestra CONTACTO
+20.- añado una consulta al fichero router.js y muestro el resultado en formato json
+21.- como mejora refenciamos al fichero index.ejs de view para mostrar información, a través de una variable
+22.- Vamos a elegir los estilos con bootsrap
+23.- Añadimos a index.ejs la plantilla basica de bootstrap y añadimos un componente narvar
+24.- Vamos a utilizar los iconos de boxicons y enlazamos con ella <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+25.- definimos una tabla con los datos de la tabla user
+26.- Nos vamos al fichero router.js y creamos una n ueva ruta para crear registros router.get("/create',)
+27.- Añadimos contenido al fichero create.ejs
+28.- Añadimos a create.ejs el formulario de index.ejs y quitamos la parte de codigo que se refiere a la tabla
+29.- Añado en index.ejs un formulario para añadir datos
+30.- Definimos el metodo save que hace referencia en el index.ejs
+31.- Defino el contenido del fichero crud.js dentro de la carpeta controllers, el objetivo es capturar los valores de insert.ejs de views
+32.- En el fichero router.js invocamos los  metodos para el CRUD
+33.- Tenemos que añadir la linea app.use(express.urlencoded({extended:false})); al fichero principal app.js
+34.- Nos queda hacer una consulta con conexion en nuestro fichero crud.js dentro de controllers
+35.- Creamos la ruta de edit en el fichero router.js, el boton edit esta en el views/index.ejs
+36.- Creamos el contenido de edit.ejs dentro de views, reutilizamos el contenido de la plantilla create.ejs y lo personalizamos para la funcionalidad de editar, por ejemplo añadimos    <% (user) { %>
+37.- Añadimos en nuestro controlador crud.js un metodo para actualizar
+38.- Lo añadimos en el enrutador tambien router.js añadirmos la linea router.post('/update', crud.update);
+39.- Añadimos el procedimiento de borrar, primero en nuestra views modfidicamos nuesto index.ejs
+40.- Añadimos una ruta para eliminar el registro en router.js
+
+
+
+NOTA: para arrancar nuevamente nuestra aplicacion poner en nuestro caso npm run dev
