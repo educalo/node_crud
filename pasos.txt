@@ -33,8 +33,12 @@ Terminal:
 32.- En el fichero router.js invocamos los  metodos para el CRUD
 33.- Tenemos que añadir la linea app.use(express.urlencoded({extended:false})); al fichero principal app.js
 34.- Nos queda hacer una consulta con conexion en nuestro fichero crud.js dentro de controllers
-
-
+35.- Creamos la ruta de edit en el fichero router.js, el boton edit esta en el views/index.ejs
+36.- Creamos el contenido de edit.ejs dentro de views, reutilizamos el contenido de la plantilla create.ejs y lo personalizamos para la funcionalidad de editar, por ejemplo añadimos    <% (user) { %>
+37.- Añadimos en nuestro controlador crud.js un metodo para actualizar
+38.- Lo añadimos en el enrutador tambien router.js añadirmos la linea router.post('/update', crud.update);
+39.- Añadimos el procedimiento de borrar, primero en nuestra views modfidicamos nuesto index.ejs
+40.- Añadimos una ruta para eliminar el registro en router.js
 
 
 
